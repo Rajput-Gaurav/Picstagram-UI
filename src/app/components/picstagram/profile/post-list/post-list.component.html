@@ -1,0 +1,28 @@
+<hr />
+<!-- if there is no post then: -->
+<div *ngIf="posts.length === 0; else postList" class="alert alert-info">
+  No Posts to Display.
+</div>
+
+<!-- if the post available -->
+<ng-template #postList>
+  <!-- create a search options: -->
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="query"
+        placeholder="search..."
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- use custom search pipe for searching local: -->
+    <!-- pass the argument with search pipe: -->
+    <div *ngFor="let post of posts | search: query" class="col col-md-4 mt-2">
+      <app-post-item [post]="post"></app-post-item>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+{{ post.caption }}
+<button (click)="remove()" class="btn btn-danger btn-sm">Delete</button>
+<!-- make image clickable for going postDetail:
+    use property binding with routerLink,
+    first parameter will component where we want to go,
+    and second parameter will post-id: -->
+
+<a [routerLink]="['posts/detail', post.id]">
+  <!-- use appHighlight custom directive: -->
+  <img
+    appHighlight="black"
+    class="img-thumbnail"
+    src="{{ post.imageUrl }}"
+    alt=""
+  />
+</a>

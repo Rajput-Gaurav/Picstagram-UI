@@ -1,0 +1,40 @@
+<h2>Add Post</h2>
+<hr />
+<form action="" (submit)="addPost()">
+  <div class="form-group">
+    <label for="caption">Caption</label>
+    <input
+      type="text"
+      id="caption"
+      class="form-control"
+      [(ngModel)]="caption"
+      name="caption"
+      (input)="handleChange()"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      class="form-control"
+      [(ngModel)]="description"
+      name="description"
+      (input)="handleChange()"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="imageUrl">Image</label>
+    <input
+      type="text"
+      id="imageUrl"
+      class="form-control"
+      [(ngModel)]="imageUrl"
+      name="imageUrl"
+      (input)="handleChange()"
+    />
+  </div>
+
+  <button class="btn btn-primary">Add Post</button>
+</form>

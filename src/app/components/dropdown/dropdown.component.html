@@ -1,0 +1,18 @@
+<div id="multiselect-sample" class="control-section">
+  <div id="content">
+    <div class="control-styles">
+      <h4>Grouping</h4>
+
+      <!-- <angular2-multiselect id="multiselect-grouping"></angular2-multiselect> -->
+      <angular2-multiselect
+        [data]="dropdownList"
+        [(ngModel)]="selectedItems"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="OnItemDeSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+        (onDeSelectAll)="onDeSelectAll($event)"
+      ></angular2-multiselect>
+    </div>
+  </div>
+</div>

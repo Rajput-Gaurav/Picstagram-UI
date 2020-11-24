@@ -1,0 +1,189 @@
+Decorators:
+--decorator adds some meaning too our exsisting class and they modify the classes:
+@Component
+@NgModule
+@Input	-> pass the property parent to child:
+@Output -> pass the event parent to child class.
+@Injectable ->makes class would Injectable.
+@HostListener ->listen the host event.
+@pipe -> 
+@Directive -> change the DOM or UI.
+
+============================================
+Directives:
+--------------------------------------------
+--its changes the look or behaviour for html tag or specific element.
+*ngFor
+*ngIf
+*ngSwitch
+ngModel
+ngForms
+ngClass
+ngStyle
+formControl
+formGroup
+	-formControlName
+routerLink
+router-outlet
+=============================================
+Module:
+---------------------------------------------
+BrowserModule
+FormsModule
+HttpClientModule
+HttpModule	->old module
+ReactiveFormsModule
+RouterModule:
+	-forRoot()
+	-forChild()
+----------------------------------------------
+Classes:
+=============================================
+FormGroup
+FormControl
+FormBuilder
+Router
+ActivatedRoute
+ElementRef
+HttpClient
+==============================================
+Data Binding in Angular:
+----------------------------------------------
+{{}}  -Interpolation -> transfering data class to template.
+[]    -Property Binding ->transfering data class to template.
+()    -Event Binding	->transfering data Template to class.
+#     -Template Variables -> Template only.
+[()]  -Two way Binding -> trasfering data template to class, and class to template.
+=============================================
+Passing data from Parent to child.
+---------------------------------------------
+DAY-3>>>>>>>
+=============================================
+Services: -> implementing when we need some source of data.
+	  -> its has to be singleton object.
+
+=============================================
+Dependency Injection:
+=============================================
+TS:(es6)
+
+variable
+class
+template strings
+fat arrow functions
+spread operators(arrays and objects)
+destructuring(arrays and objects)
+import and export
+---------------------------------------------
+DAY-4>>>>>>>>>
+=============================================
+json-server:
+npm i -g json-server ->install json-server globally.
+json-server db.json ->create json file.
+=============================================
+HttpClientModule:
+HttpClient ->dependency, inject into service. and also it is Injectable.
+create a instance http:
+supported method:
+	-get()
+	-put() ->used for update all the field.
+	-post()
+	-delete()
+	-patch() ->used for update specific field.
+HttpClient it is observable.
+===============================================
+Rxjs:
+	-Subject
+	-Obsevable
+
+Asyns Programming:
+	-callbacks:
+	API calls: -if one api dependent to another.
+	get(apiUrl, function(err,data)){
+		get(apiUrl, function(err,data){
+			get(apiUrl, function() {})
+		})
+	})
+	-Promises: ->In Promise we can not cancel the request.
+		get(apiUrl)
+			.then(function(data) {})
+			.then(function() {})
+			.then(function() {})
+			.catch(function(err) {})
+	-Observable: ->In Observable we can cancel the request.
+		get(apiUrl)
+			.subscribe((data) => {}, (err) => {})
+===============================================
+Implementation of API calls in our Services
+------------------------------------------------
+Forms In Angular:
+================================================
+1-Template Driven FOrms
+2-Reactive Forms(Model Driven Forms)
+-----------------------------------------------
+Forms and Control:
+-------------------
+	-valid -invalid
+	-touched -untouched
+	-dirty -pristine
+------------------------------------------------
+Pipes:
+================================================
+|json
+------------------------------------------------
+Routing:
+================================================
+-forRoot() -> when implement main routing for root then its needed.
+-forChild() ->when implement child routing for components then its needed.
+
+datatypes: -Routes ->use Routes component to define datatypes of route:
+	-Properties of Routes:-
+	-path
+	-component
+	-exact -> use for redirect route.
+	-children	->use for sub route.
+	-loadChildren	->use for lazy loading.
+ActivatedRoute ->injectable
+Router	->injectable
+	-navigate()
+router-outlet -> where we want too show output, then use router-outlet on template.
+routerLink -> use as a anchorLink remove href. 
+==================================================
+--------------------------------------------------
+Route Guards:
+	->route guard is used too guard the routes:
+	-canActivate ->it execute when we enter the route.
+	-canDeactivate ->it execute when we leave the route.
+	-canActivateChild
+	-canLoad
+===================================================
+---------------------------------------------------
+Components Lifecycle Hooks:
+	-lifecycle hooks are functions they are automatically executed as a component load.
+	-ngOnInit()
+	-ngOnChanges()
+	-ngOnViewInit()
+====================================================
+----------------------------------------------------
+Custom Directive:
+Directive	-Decorator
+ElementRef	-injectable
+HostListner	-Decorator, which is listen the host event.
+====================================================
+----------------------------------------------------
+Custom Pipes:
+Pipe	-Decorator
+PipeTransform	-Interface
+
+pipes:	json,uppercase,lowercase,async,date,currency.
+
+======================================================
+------------------------------------------------------
+Unit Testing Intro:
+describe()	-Test Suite (Group of related test cases)
+it()		-Test Case
+expect()	-The Assertion Library
+beforeEach()	-To execute certain code before each test case.
+--------------------------------------------------------
+TestBed	-Like NgModule
+ComponentFixture	-Component Decorator
